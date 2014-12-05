@@ -88,7 +88,7 @@ $.widget "ui.dialogExtend",
       .end()
     # append restore button to button-pane
     buttonPane
-      .append('<a class="ui-dialog-titlebar-restore ui-corner-all ui-state-default" href="#"><span class="ui-icon '+@options.icons.restore+'" title="restore">restore</span></a>')
+      .append('<a class="ui-dialog-titlebar-restore ui-corner-all" href="#"><span class="ui-icon '+@options.icons.restore+'" title="restore">restore</span></a>')
       # add effect to button
       .find('.ui-dialog-titlebar-restore')
         .attr("role", "button")
@@ -131,7 +131,7 @@ $.widget "ui.dialogExtend",
   
   _initModuleButton:(name,mode)->
     buttonPane = $(@element[0]).dialog("widget").find '.ui-dialog-titlebar-buttonpane'
-    buttonPane.append('<a class="ui-dialog-titlebar-'+name+' ui-corner-all ui-state-default" href="#" title="'+name+'"><span class="ui-icon '+@options.icons[name]+'">'+name+'</span></a>')
+    buttonPane.append('<a class="ui-dialog-titlebar-'+name+' ui-corner-all" href="#" title="'+name+'"><span class="ui-icon '+@options.icons[name]+'">'+name+'</span></a>')
       .find(".ui-dialog-titlebar-"+name)
         .attr("role", "button")
         .mouseover(()-> $(@).addClass("ui-state-hover"))
