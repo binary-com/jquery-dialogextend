@@ -18,7 +18,7 @@ $.widget "ui.dialogExtend",
 
   _create: ()->
     @_state = "normal"
-    if not $(@element[0]).data "ui-dialog"
+    if not $(@element[0]).data "dialog"
       $.error "jQuery.dialogExtend Error : Only jQuery UI Dialog element is accepted" 
     @_verifyOptions()
     @_initStyles()

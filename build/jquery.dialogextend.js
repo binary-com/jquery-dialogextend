@@ -20,7 +20,7 @@
     },
     _create: function() {
       this._state = "normal";
-      if (!$(this.element[0]).data("ui-dialog")) {
+      if (!$(this.element[0]).data("dialog")) {
         $.error("jQuery.dialogExtend Error : Only jQuery UI Dialog element is accepted");
       }
       this._verifyOptions();
