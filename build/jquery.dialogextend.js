@@ -286,7 +286,7 @@
         "height": newHeight,
         "maxHeight": newHeight,
         "position": [pos.left - $(document).scrollLeft(), pos.top - $(document).scrollTop()]
-      }).on('dialogclose', this._collapse_restore).hide().dialog("widget").find(".ui-dialog-buttonpane:visible").hide().end().find(".ui-dialog-titlebar").css("white-space", "nowrap").end().find(".ui-dialog-content");
+      }).bind('dialogclose', this._collapse_restore).hide().dialog("widget").find(".ui-dialog-buttonpane:visible").hide().end().find(".ui-dialog-titlebar").css("white-space", "nowrap").end().find(".ui-dialog-content");
       this._setState("collapsed");
       this._toggleButtons();
       return this._trigger("collapse");
@@ -298,7 +298,7 @@
         "resizable": original.config.resizable,
         "height": original.size.height,
         "maxHeight": original.size.maxHeight
-      }).off('dialogclose', this._collapse_restore);
+      }).unbind('dialogclose', this._collapse_restore);
     },
     _initStyles_collapse: function() {
       var style;
@@ -460,13 +460,13 @@
         "width": newWidth,
         "position": "static"
       });
-      $(this.element[0]).on('dialogbeforeclose', this._minimize_restoreOnClose).dialog("widget").hide();
+      $(this.element[0]).bind('dialogbeforeclose', this._minimize_restoreOnClose).dialog("widget").hide();
       this._setState("minimized");
       return this._trigger("minimize");
     },
     _restore_minimized: function() {
       $(this.element[0]).dialog("widget").show();
-      $(this.element[0]).off('dialogbeforeclose', this._minimize_restoreOnClose);
+      $(this.element[0]).unbind('dialogbeforeclose', this._minimize_restoreOnClose);
       $(this.element[0]).data("dialog-extend-minimize-controls").remove();
       return $(this.element[0]).removeData("dialog-extend-minimize-controls");
     },

@@ -51,7 +51,7 @@ $.extend true,$.ui.dialogExtend.prototype,
       "width": newWidth
       "position": "static"
     # restore dialog before close
-    $(@element[0]).on('dialogbeforeclose',@_minimize_restoreOnClose)
+    $(@element[0]).bind('dialogbeforeclose',@_minimize_restoreOnClose)
     # hide original dialog
     .dialog("widget").hide()
     # mark new state
@@ -63,7 +63,7 @@ $.extend true,$.ui.dialogExtend.prototype,
     # restore dialog
     $(@element[0]).dialog("widget").show()
     # disable close handler
-    $(@element[0]).off('dialogbeforeclose',@_minimize_restoreOnClose)
+    $(@element[0]).unbind('dialogbeforeclose',@_minimize_restoreOnClose)
     # remove dialogcontrols
     $(@element[0]).data("dialog-extend-minimize-controls").remove()
     $(@element[0]).removeData("dialog-extend-minimize-controls")

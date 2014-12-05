@@ -32,7 +32,7 @@ $.extend true,$.ui.dialogExtend.prototype,
         "maxHeight" : newHeight
         "position" : [pos.left - $(document).scrollLeft(),pos.top - $(document).scrollTop()]
       )
-      .on('dialogclose',@_collapse_restore)
+      .bind('dialogclose',@_collapse_restore)
       # hide content
       # hide button-pane
       # make title-bar no-wrap
@@ -66,7 +66,7 @@ $.extend true,$.ui.dialogExtend.prototype,
         "height" : original.size.height
         "maxHeight" : original.size.maxHeight
       )
-      .off('dialogclose',@_collapse_restore)
+      .unbind('dialogclose',@_collapse_restore)
 
   _initStyles_collapse:()->
     if not $(".dialog-extend-collapse-css").length
