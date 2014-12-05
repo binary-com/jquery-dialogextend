@@ -52,12 +52,12 @@ $.extend true,$.ui.dialogExtend.prototype,
             at: "left top"
             of: window
       )
-      # mark new state
-      @_setState "maximized"
-      # modify dialog buttons according to new state
-      @_toggleButtons()
-      # trigger custom event
-      @_trigger "maximize"
+    # mark new state
+    @_setState "maximized"
+    # modify dialog buttons according to new state
+    @_toggleButtons()
+    # trigger custom event
+    @_trigger "maximize"
   _restore_maximized:()->
     original = @_loadSnapshot()
     # restore dialog
@@ -80,13 +80,13 @@ $.extend true,$.ui.dialogExtend.prototype,
           at: "left+"+original.position.left+" top+"+original.position.top
           of: window
       )
-      # restore draggable-handle (for <titlebar=none> only)
-      if $(@element[0]).dialog("option","draggable")
-        $(@element[0])
-        .dialog("widget")
-          .draggable("option", "handle", if $(@element[0]).dialog("widget").find(".ui-dialog-draggable-handle").length then $(@element[0]).dialog("widget").find(".ui-dialog-draggable-handle") else".ui-dialog-titlebar")
-          .find(".ui-dialog-draggable-handle")
-          .css("cursor", "move");
+    # restore draggable-handle (for <titlebar=none> only)
+    if $(@element[0]).dialog("option","draggable")
+      $(@element[0])
+      .dialog("widget")
+        .draggable("option", "handle", if $(@element[0]).dialog("widget").find(".ui-dialog-draggable-handle").length then $(@element[0]).dialog("widget").find(".ui-dialog-draggable-handle") else".ui-dialog-titlebar")
+        .find(".ui-dialog-draggable-handle")
+        .css("cursor", "move");
 
   _initStyles_maximize:()->
     if not $(".dialog-extend-maximize-css").length
