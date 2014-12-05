@@ -25,9 +25,6 @@ $.widget "ui.dialogExtend",
     @_initButtons()
     @_initTitleBar()
     @_setState "normal"
-    @_on "load",(e)->
-      console.log "test",e
-    @_trigger "load"
   
   _setState: (state)->
     $(@element[0])

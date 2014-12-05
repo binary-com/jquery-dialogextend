@@ -27,11 +27,7 @@
       this._initStyles();
       this._initButtons();
       this._initTitleBar();
-      this._setState("normal");
-      this._on("load", function(e) {
-        return console.log("test", e);
-      });
-      return this._trigger("load");
+      return this._setState("normal");
     },
     _setState: function(state) {
       $(this.element[0]).removeClass("ui-dialog-" + this._state).addClass("ui-dialog-" + state);
