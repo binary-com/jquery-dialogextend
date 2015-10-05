@@ -9,8 +9,9 @@ module.exports = (grunt) ->
         dest: 'build/jquery.dialogextend.min.js'
     coffee:
       compile:
+        options: { bare: true }
         files:
-          'build/jquery.dialogextend.js':['src/jquery.dialogextend.coffee','src/modules/*.coffee']
+          'build/jquery.dialogextend.js':['src/jquery.dialogextend.coffee']
   
   grunt.loadNpmTasks 'grunt-contrib-uglify'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
