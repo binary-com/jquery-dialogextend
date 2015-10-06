@@ -1,6 +1,6 @@
 {
 	"name" : "binary-com-jquery-dialogextended",
-	"version" : "0.0.1",
+	"version" : "2.0.5",
 	"ignore": [
 		"example.html",
 		"README.md"
