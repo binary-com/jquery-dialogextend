@@ -1,14 +1,8 @@
 {
-	"name" : "binary_com_jquery_dialogextended',
+	"name" : "binary-com-jquery-dialogextended",
 	"version" : "0.0.1",
 	"ignore": [
-		"node_modules/",
-		".gitattributes",
-		".gitignore",
-		"CHANGELOG.md",
 		"example.html",
-		"Gruntfile.coffee",
-		"package.json",
 		"README.md"
 	],
 	"dependencies": {
